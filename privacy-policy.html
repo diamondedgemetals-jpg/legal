@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Diamond Edge Metals</title>
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #f97316;
+      --accent-glow: rgba(249, 115, 22, 0.15);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .effective-date {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+    p, ul {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    strong {
+      color: #ffffff;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">Official Compliance Policy</span>
+      <h1>Privacy Policy</h1>
+      <p class="effective-date">Application: <strong>Diamond Edge Metals (DMD Workforce Hub)</strong><br>Package: <code>com.diamondedgemetals.prosper</code><br>Effective Date: October 5, 2026</p>
+    </div>
 
+    <h2>1. Introduction</h2>
+    <p>Diamond Edge Metals Inc. ("Diamond Edge Metals", "we", "our", or "us") provides industrial logistics, scrap material grading, workforce dispatch, and real-time fleet telemetrics via the <strong>Diamond Edge Metals</strong> mobile application and web portal. We are committed to safeguarding your privacy and ensuring transparency regarding how your data is collected, processed, and secured.</p>
+
+    <h2>2. Data We Collect</h2>
+    <p>Depending on your role (Scrap Seller, Certified Driver, Fleet Boss, or Yard Supervisor), we collect the following categories of information:</p>
+    <ul>
+      <li><strong>Account & Identity Data:</strong> Full legal name, email address, phone number, vehicle specifications, commercial driver license (CDL) numbers, and enterprise EID identification codes.</li>
+      <li><strong>Precise & Coarse Geolocation Data:</strong> With user permission (<code>ACCESS_FINE_LOCATION</code>, <code>ACCESS_COARSE_LOCATION</code>), we stream real-time driver coordinates during active logistics assignments to provide depot ETA calculations and secure live client dispatch tracking links.</li>
+      <li><strong>Camera & Visual Data:</strong> Images captured through the camera (<code>CAMERA</code>) for spectroscopic AI material alloy classification, catalytic converter serial barcode identification, and digital scale ticket verification. Photographs are transmitted securely to our certified valuation backend (<code>https://realdiamondmetals-valuation-api.onrender.com</code>) for real-time metallurgical valuation.</li>
+      <li><strong>Microphone & Audio Diagnostics Data:</strong> Audio input (<code>RECORD_AUDIO</code>) is captured ephemerally in volatile memory (RAM) for real-time speech diagnostics and voice synthesizer testing only. Audio streams are never stored on persistent storage (disk or database) and are never transmitted to third parties or remote servers.</li>
+      <li><strong>Device Identifiers & Advertising ID (AD_ID):</strong> In accordance with Google Play Store policies and the <code>com.google.android.gms.permission.AD_ID</code> permission, our app integrates Google AdMob (App ID: <code>ca-app-pub-4285355284769713~8920863465</code>). AdMob collects the Google Advertising ID for fraud prevention, analytics, frequency capping, and ad delivery. Users can opt out of personalized ads at any time via Android Settings &gt; Google &gt; Ads or via <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</li>
+      <li><strong>Transactional &amp; Scale Metrics:</strong> Weight tickets, material grades, live spot market valuations, and digital bill-of-lading records.</li>
+      <li><strong>Optional AI Training Scan Contribution (Default Off):</strong> Scrap metal photographs, canonical 30-class ISRI grade confirmations, surface condition tags (<code>clean</code>, <code>dirty</code>, or <code>pgm_assay</code>), and optional scale-ticket weights are collected <strong>only</strong> if you explicitly enable Version 1.0 Opt-In Training Consent. Before transmission, client-side canvas re-encoding strips embedded EXIF GPS coordinates, timestamps, and camera serial metadata.</li>
+    </ul>
+
+    <h2>3. How We Use Your Data</h2>
+    <p>Collected information is used strictly to power core logistics and yard operations:</p>
+    <ul>
+      <li>Dispatching flatbed pickups and updating Samsara IoT telemetric simulation feeds.</li>
+      <li>Computing EPA WARM lifecycle greenhouse gas emissions abatements and ESG audit certificates.</li>
+      <li>Validating enterprise driver seat allocations and hot-swappable license quotas.</li>
+      <li>Processing in-app subscription entitlements via RevenueCat and Google Play Billing.</li>
+      <li>Preventing unauthorized access and enforcing yard safety protocols.</li>
+      <li><strong>Quarantined Dataset Curation &amp; Promotional Scan Credits:</strong> Explicitly opted-in scrap scans pass automated domain and duplicate screening into an isolated <code>quarantine_pending</code> review queue prior to 30-class model training (unlocking 7+ promotional Pro AI scans per 5 verified scale-matched contributions without altering Google Play Billing subscriptions). You may revoke consent or permanently erase contributed scans in one tap from Settings or via <code>DELETE /api/vision/opt-in-scan/:contributionId</code>.</li>
+    </ul>
+
+    <h2>4. Data Sharing & Third-Party Services</h2>
+    <p>We do not sell, rent, or trade your personal data. We disclose data solely to authenticated enterprise providers essential for platform operations:</p>
+    <ul>
+      <li><strong>Google Cloud & Firebase:</strong> For encrypted database persistence (Cloud Firestore), authentication, and hosting.</li>
+      <li><strong>RevenueCat & Google Play:</strong> For subscription license validation and entitlement management.</li>
+      <li><strong>Google Maps Platform:</strong> For route calculations and fleet marker geolocation rendering.</li>
+      <li><strong>Google AdMob (Google LLC):</strong> To deliver advertisements within the app, AdMob (App ID: <code>ca-app-pub-4285355284769713~8920863465</code>) processes device identifiers (including Advertising ID <code>AD_ID</code>) and diagnostic metrics. Users can manage ad preferences in Android Settings &gt; Google &gt; Ads.</li>
+      <li><strong>Render Valuation API (Render Services, Inc.):</strong> Scrap material photographs and spectroscopic grade requests are securely processed at <code>https://realdiamondmetals-valuation-api.onrender.com</code> to compute density, alloy grade, and market valuations. No account credentials or financial data are transferred.</li>
+    </ul>
+
+    <h2>5. Data Retention & Security</h2>
+    <p>All data in transit is encrypted using industry-standard TLS 1.3/SSL 256-bit encryption. Data at rest is protected by strict Firestore Security Rules. We retain personal and fleet information only for as long as your account remains active or as required by commercial tax and salvage yard record-keeping laws.</p>
+
+    <h2>6. Your Rights & Account Deletion</h2>
+    <p>You have the right to inspect, update, or permanently delete your personal information and driver records. In compliance with Google Play Developer policies, you can request full account and data erasure at any time without needing to reinstall the app by visiting our public <a href="delete-account.html">Account Deletion Request Portal</a>.</p>
+
+    <h2>7. Contact Information</h2>
+    <p>If you have questions, feedback, or inquiries regarding this Privacy Policy, please contact our logistics compliance team:</p>
+    <p>
+      <strong>Diamond Edge Metals Inc.</strong><br>
+      Email: <a href="mailto:diamondedgemetals@gmail.com">diamondedgemetals@gmail.com</a><br>
+      Portal: <a href="https://metaldash-108117276379.us-east1.run.app">https://metaldash-108117276379.us-east1.run.app</a>
+    </p>
+
+    <div class="footer">
+      <span>© 2026 Diamond Edge Metals Inc. All Rights Reserved.</span>
+      <span><a href="terms-of-service.html">Terms of Service</a> • <a href="delete-account.html">Account Deletion</a> • <a href="https://metaldash-108117276379.us-east1.run.app">Workforce Hub</a></span>
+    </div>
+  </div>
+</body>
+</html>

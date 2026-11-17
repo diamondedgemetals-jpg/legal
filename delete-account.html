@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Account & Data - Diamond Edge Metals</title>
+  <style>
+    :root {
+      --bg: #09090b;
+      --card-bg: #18181b;
+      --border: #27272a;
+      --text: #f4f4f5;
+      --text-muted: #a1a1aa;
+      --accent: #f97316;
+      --accent-glow: rgba(249, 115, 22, 0.15);
+      --danger: #ef4444;
+      --success: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.15);
+      color: var(--danger);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    li {
+      margin-bottom: 0.4rem;
+    }
+    strong {
+      color: #ffffff;
+    }
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      background-color: #09090b;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      color: #ffffff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    .btn-delete {
+      width: 100%;
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: #ffffff;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      margin-top: 1rem;
+    }
+    .btn-delete:hover {
+      opacity: 0.9;
+    }
+    .btn-delete:active {
+      transform: scale(0.99);
+    }
+    .alert-box {
+      background: rgba(249, 115, 22, 0.08);
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.85rem;
+      color: #fed7aa;
+    }
+    .success-message {
+      display: none;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      color: #6ee7b7;
+      border-radius: 0.75rem;
+      padding: 1.25rem;
+      margin-top: 1.5rem;
+      text-align: center;
+    }
+    .error-message {
+      display: none;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
+      color: #fca5a5;
+      border-radius: 0.75rem;
+      padding: 1rem;
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 0.88rem;
+    }
+    .footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="badge">Google Play Compliance</span>
+      <h1>Request Account & Data Deletion</h1>
+      <p>App: <strong>Diamond Edge Metals (DMD Workforce Hub)</strong><br>Package: <code>com.diamondedgemetals.prosper</code></p>
+    </div>
+
+    <div class="alert-box">
+      <strong>Notice regarding deletion:</strong> In accordance with Google Play's User Data policy, users may permanently delete their account, credentials, and associated personal information directly through this portal without needing to access the mobile application.
+    </div>
+
+    <h2>What Data Will Be Deleted:</h2>
+    <ul>
+      <li>User authentication credentials, email addresses, and phone numbers.</li>
+      <li>Certified Driver records, CDL license numbers, and assigned vehicle info.</li>
+      <li>Enterprise EID codes and active driver seat allocations.</li>
+      <li>Historical GPS telemetric positioning logs.</li>
+      <li>Spectroscopic AI vision camera scan history and custom image uploads.</li>
+    </ul>
+
+    <h2>What Data May Be Retained:</h2>
+    <p>Legally mandated industrial scrap weight records and completed transaction receipts may be archived for required commercial salvage audit retention periods in anonymized format.</p>
+
+    <form id="deletion-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label for="email">Account Email or Driver EID Code *</label>
+        <input type="text" id="email" required placeholder="e.g. user@example.com or EID-MARCUS">
+      </div>
+
+      <div class="form-group">
+        <label for="role">Select Your User Type</label>
+        <select id="role">
+          <option value="driver">Certified Driver / Operator</option>
+          <option value="seller">Scrap Peddler / Seller</option>
+          <option value="boss">Boss / Fleet Administrator</option>
+          <option value="other">Other Account Holder</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="reason">Reason for Deletion (Optional)</label>
+        <textarea id="reason" rows="3" placeholder="Let us know why you are deleting your profile..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-delete" id="submit-btn">
+        Submit Account Deletion Request
+      </button>
+    </form>
+
+    <div id="error-msg" class="error-message"></div>
+
+    <div id="success-msg" class="success-message">
+      <h3 style="color:#ffffff; margin-bottom: 0.5rem;">Deletion Request Processed Successfully</h3>
+      <p id="success-details" style="color:#a7f3d0; margin-bottom: 0;">Your request has been verified and processed. All associated account credentials, driver telemetry, and seat allocations have been permanently removed.</p>
+    </div>
+
+    <div class="footer">
+      <p>© 2026 Diamond Edge Metals Inc. • <a href="/terms-of-service.html">Terms of Service</a> • <a href="/privacy-policy.html">Privacy Policy</a> • <a href="/">Back to Portal</a></p>
+    </div>
+  </div>
+
+  <script>
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const inputVal = document.getElementById('email').value.trim();
+      const role = document.getElementById('role').value;
+      const reason = document.getElementById('reason').value.trim();
+      
+      const btn = document.getElementById('submit-btn');
+      const errorMsg = document.getElementById('error-msg');
+      const successMsg = document.getElementById('success-msg');
+      
+      errorMsg.style.display = 'none';
+      btn.disabled = true;
+      btn.textContent = 'Processing deletion request...';
+
+      const isEid = inputVal.toUpperCase().startsWith('EID-') || !inputVal.includes('@');
+      const payload = {
+        email: isEid ? '' : inputVal,
+        driverEid: isEid ? inputVal : '',
+        rawIdentifier: inputVal,
+        role: role,
+        reason: reason,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        const endpoints = [
+          '/api/request-account-deletion',
+          'https://metaldash-108117276379.us-east1.run.app/api/request-account-deletion'
+        ];
+        let res = null;
+        let data = {};
+        let lastErr = null;
+        for (const endpoint of endpoints) {
+          try {
+            const candidateRes = await fetch(endpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload)
+            });
+            const candidateData = await candidateRes.json().catch(() => ({}));
+            if (candidateRes.ok && candidateData.success) {
+              res = candidateRes;
+              data = candidateData;
+              break;
+            }
+            if (candidateRes.status !== 404) {
+              res = candidateRes;
+              data = candidateData;
+              break;
+            }
+          } catch (attemptErr) {
+            lastErr = attemptErr;
+          }
+        }
+
+        if (res && res.ok && data.success) {
+          document.getElementById('deletion-form').style.display = 'none';
+          if (data.message) {
+            const countText = data.scrubbedCount !== undefined ? ` Records scrubbed: ${data.scrubbedCount}.` : '';
+            document.getElementById('success-details').textContent = data.message + countText;
+          }
+          successMsg.style.display = 'block';
+        } else if (lastErr && !res) {
+          throw lastErr;
+        } else {
+          throw new Error(data.error || data.message || `Request failed with status ${res ? res.status : 'network error'}`);
+        }
+      } catch (err) {
+        console.error('Account deletion submission error:', err);
+        errorMsg.textContent = 'Account deletion request failed: ' + (err.message || 'Please check your information and try again.');
+        errorMsg.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Submit Account Deletion Request';
+      }
+    }
+  </script>
+</body>
+</html>
